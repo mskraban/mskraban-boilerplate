@@ -1,4 +1,4 @@
-# Boilerplate on steroids 💊
+# 💊 Boilerplate on steroids
 
 This is boilerplate for every Front End developers who use SCSS.
 
