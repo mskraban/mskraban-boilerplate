@@ -1,4 +1,4 @@
-# 💊 Boilerplate on steroids 💊
+# Boilerplat on steroids 💊
 
 This is upgraded and customised boilerplate for Front End developers.
 
