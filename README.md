@@ -1,4 +1,4 @@
-# Boilerplate on steroids
+# 💊 Boilerplate on steroids 💊
 
 This is upgraded and customised boilerplate for Front End developers.
 
@@ -22,8 +22,6 @@ Boilerplate uses Yarn packet manager for custom dependencies.
  - jquery: "3.4.1",
  - popper.js: "1.16.0,
  - modernizir.js: "3.8.0",
- - normalize: "0.3.1",
- - swiper: "5.3.1",
  - wow.js: "1.2.2",
  - animate.css: "3.7.2"
 
