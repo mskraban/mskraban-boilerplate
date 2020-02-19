@@ -1,6 +1,6 @@
-# Boilerplat on steroids 💊
+# Boilerplate on steroids 💊
 
-This is upgraded and customised boilerplate for Front End developers.
+This is boilerplate for every Front End developers who use SCSS.
 
 ## Install
 Just install yarn via command bellow to get all of included dependencies.
@@ -11,6 +11,8 @@ Just install yarn via command bellow to get all of included dependencies.
 Boilerplate uses Yarn packet manager for custom dependencies.
 
  - Complete seo template
+ - Open graph
+ - Twitter cards
  - Favicons
  - Htacess
  - robots.txt
