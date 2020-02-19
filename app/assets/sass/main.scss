@@ -1,0 +1,92 @@
+@charset "UTF-8";
+@import "base";
+
+$base-color: #232323;
+$base-font-family: 'Montserrat', sans-serif;
+
+$primary-color: #333;
+$secondary-color: #fff;
+
+//Website mixins for complex backgrounds or styles
+@mixin base-text-p {
+  color: #232323;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@mixin base-heading-h1 {
+  color: #232323;
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@mixin base-heading-h2 {
+  color: #232323;
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@mixin base-heading-h3 {
+  color: #232323;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@mixin base-heading-h4 {
+  color: #232323;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@mixin base-heading-h5 {
+  color: #232323;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.428571429;
+  padding: 0;
+  height: 100%;
+  font-family: $base-font-family;
+  font-weight: 400;
+}
+
+h1 {
+  @include base-heading-h1;
+}
+
+h2 {
+  @include base-heading-h1;
+}
+
+h3 {
+  @include base-heading-h1;
+}
+
+h4 {
+  @include base-heading-h1;
+}
+
+h5 {
+  @include base-heading-h1;
+}
+
+p {
+  @include base-text-p;
+}
