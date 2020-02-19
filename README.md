@@ -30,4 +30,5 @@ Boilerplate uses Yarn packet manager for custom dependencies.
 In order to compile SCSS to CSS, you net to configure filewatcher properly. To do this, use next two lines:
 **Arguments:**
  `--no-cache --update $FileName$:../../public/assets/css/$FileNameWithoutExtension$.css --style compressed`
+ 
 **Output paths to refresh:** `../../public/assets/css/$FileNameWithoutExtension$.css:../../public/assets/css/$FileNameWithoutExtension$.css.map`
