@@ -90,3 +90,7 @@ h5 {
 p {
   @include base-text-p;
 }
+
+article {
+  color: red;
+}
