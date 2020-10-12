@@ -1,6 +1,4 @@
-# 💊 Boilerplate on steroids
-
-This is boilerplate for every Front End developers who use SCSS.
+# 🛒 Pink shop
 
 ## Install
 Just install yarn via command bellow to get all of included dependencies.

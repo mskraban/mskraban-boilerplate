@@ -1,96 +1,588 @@
 @charset "UTF-8";
 @import "base";
 
+@font-face {
+    font-family: "AbrilFatface";
+    src: url("../fonts/AbrilFatface-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Catamaran";
+    src: url("../fonts/Catamaran-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Catamaran";
+    src: url("../fonts/Catamaran-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Catamaran";
+    src: url("../fonts/Catamaran-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Catamaran";
+    src: url("../fonts/Catamaran-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Catamaran";
+    src: url("../fonts/Catamaran-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Catamaran";
+    src: url("../fonts/Catamaran-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Catamaran";
+    src: url("../fonts/Catamaran-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Catamaran";
+    src: url("../fonts/Catamaran-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Catamaran";
+    src: url("../fonts/Catamaran-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
 $base-color: #232323;
-$base-font-family: 'Montserrat', sans-serif;
+$base-font-family: 'AbrilFatface', sans-serif;
 
 $primary-color: #333;
 $secondary-color: #fff;
 
-//Website mixins for complex backgrounds or styles
-@mixin base-text-p {
-  color: #232323;
-  font-size: 1rem;
-  font-weight: 400;
-  font-family: 'Montserrat', sans-serif;
-}
-
-@mixin base-heading-h1 {
-  color: #232323;
-  font-size: 3rem;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
-}
-
-@mixin base-heading-h2 {
-  color: #232323;
-  font-size: 2.4rem;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
-}
-
-@mixin base-heading-h3 {
-  color: #232323;
-  font-size: 2rem;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
-}
-
-@mixin base-heading-h4 {
-  color: #232323;
-  font-size: 1.8rem;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
-}
-
-@mixin base-heading-h5 {
-  color: #232323;
-  font-size: 1.4rem;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
-}
-
 html {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  overflow-x: hidden;
-  height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    overflow-x: hidden;
+    height: 100%;
 }
 
 body {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.428571429;
-  padding: 0;
-  height: 100%;
-  font-family: $base-font-family;
-  font-weight: 400;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.428571429;
+    padding: 0;
+    height: 100%;
+    font-family: $base-font-family;
+    font-weight: 400;
 }
 
-h1 {
-  @include base-heading-h1;
+nav {
+    background: rgba(255, 255, 255, 0.68);
+    backdrop-filter: blur(10px);
+    position: fixed !important;
+    z-index: 1500;
+    top: 0;
+    height: 65px;
+    width: 100%;
+
+    .wrap-right {
+        position: absolute;
+        right: 100px;
+        display: flex;
+        top: 50%;
+        transform: translateY(-50%);
+
+        a {
+            margin-left: 0.6rem;
+            margin-right: 0.6rem;
+        }
+    }
+
+    .menu {
+        position: absolute;
+        z-index: 12;
+        left: 70px;
+    }
 }
 
-h2 {
-  @include base-heading-h1;
+.side-menu {
+    height: 100%;
+    width: 0;
+    background: rgba(255, 255, 255, 0.68);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    transition: all 1s cubic-bezier(.18,.89,.45,1.36);
+    white-space: nowrap;
+
+    .close-menu {
+        position: fixed;
+        z-index: 50;
+        top: 20px;
+        right: 20px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .content-wrap {
+        padding-left: 130px;
+        ul {
+            li {
+                a {
+                    font-size: 46px;
+                    text-decoration: none;
+                    color: black;
+                    text-align: right;
+                    transition: all 0.2s ease;
+                    &:hover {
+                        color: #E6007E;
+                    }
+                }
+            }
+        }
+    }
 }
 
-h3 {
-  @include base-heading-h1;
+.login {
+    width: 300px;
+    background: rgb(255,255,255);
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(230,0,126,0.7) 100%);
+    position: fixed;
+    top: 100px;
+    right: 200px;
+    z-index: 1000;
+    padding: 20px;
+    border-radius: 5px;
+    mix-blend-mode: overlay;
+    .title {
+        color: black;
+        font-family: 'Catamaran', sans-serif;
+        font-size: 18px;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+    .form {
+        input {
+            background: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-radius: 0;
+            border-bottom: 1px solid #B2B2B2;
+        }
+    }
 }
 
-h4 {
-  @include base-heading-h1;
+.pink-btn-lg {
+    border: 2px solid #E6007E;
+    border-radius: 50px;
+    color: #666666;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 0.5rem 1.5rem;
+    box-shadow: inset 0 0 10px rgba(230, 0, 126, 0.4), 0 0 10px rgba(230, 0, 126, 0.4);
+    transition: all 0.35s ease;
+    text-decoration: none !important;
+
+    &:hover {
+        color: #fff;
+        background: #E6007E;
+    }
+
+    .arrow {
+        margin-left: 1.25rem;
+        margin-top: -0.1rem;
+    }
 }
 
-h5 {
-  @include base-heading-h1;
+.pink-btn {
+    border: 1px solid #E6007E;
+    border-radius: 50px;
+    color: #666666;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 0.4rem 1.3rem;
+    /* box-shadow: inset 0 0 15px rgba(230,0,126,0.4), 0 0 15px rgba(230,0,126,0.4); */
+    transition: all 0.35s ease;
+    text-decoration: none !important;
+
+    &:hover {
+        color: #fff;
+        background: #E6007E;
+    }
+
+    .arrow {
+        margin-left: 1.25rem;
+        margin-top: -0.1rem;
+    }
 }
 
-p {
-  @include base-text-p;
+footer {
+    .logo-podjetja {
+        position: absolute;
+    }
+
+    hr {
+        margin-top: 6rem;
+        margin-bottom: 2.5rem;
+        border-top: 1px solid #B2B2B2;
+    }
+
+    .space-evenly {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .group {
+        p, li, a {
+            font-family: 'Catamaran', sans-serif;
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 0.1rem;
+        }
+
+        .pink-bold {
+            font-family: 'Catamaran', sans-serif;
+            font-size: 14px;
+            color: #E6007E;
+            font-weight: 800;
+        }
+    }
+
+    .maps-wrap-left {
+        position: relative;
+
+        img {
+            position: absolute;
+            right: -28px;
+        }
+    }
+
+    .maps-wrap-right {
+        position: relative;
+
+        img {
+            position: absolute;
+            left: -28px;
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 344px;
+        margin-bottom: 1.5rem;
+
+        span {
+            margin-right: 0.5rem;
+            margin-left: 0.5rem;
+        }
+    }
+
+    .copyright {
+        font-family: 'Catamaran', sans-serif;
+        font-size: 1rem;
+        color: #666666;
+    }
 }
 
-article {
-  color: red;
+
+#main {
+    .landing {
+        height: calc(70vh + 4rem);
+        position: relative;
+
+        .dots-wrapper {
+            background-image: url("../images/dots.svg");
+            background-repeat: no-repeat;
+            background-position: 83.3% 157%;
+            padding-bottom: 4.5rem;
+        }
+
+        //.dots {
+        //    position: absolute;
+        //    bottom: -130px;
+        //    right: 0;
+        //    z-index: -1;
+        //}
+
+        .container {
+            position: absolute;
+            z-index: 10;
+            top: calc(50% - 65px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            .row {
+                flex-direction: column;
+
+                .blur-bg {
+                    background: rgba(255, 255, 255, 0.8);
+                    filter: blur(46px);
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    position: absolute;
+                    z-index: -1;
+                }
+
+                .content-wrap {
+                    h1 {
+                        font-size: 48px;
+                    }
+
+                    hr {
+                        margin-top: 0.1rem;
+                        margin-bottom: 1rem;
+                        border: 0;
+                        border-top: 1px solid #E6007E;
+                        width: 74px;
+                        margin-left: 0;
+                    }
+
+                    p {
+                        font-family: 'Catamaran', sans-serif;
+                        font-size: 1rem;
+                        color: #666666;
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    .after-landing {
+        .container {
+            .row {
+                display: flex;
+                justify-content: center;
+                text-align: right;
+
+                .move-right {
+                    margin-right: 8rem;
+                }
+
+                h2 {
+                    font-size: 48px;
+                }
+
+                hr {
+                    margin-top: 0.1rem;
+                    margin-bottom: 1rem;
+                    border: 0;
+                    border-top: 1px solid #E6007E;
+                    width: 74px;
+                    margin-right: 0;
+                }
+
+                p {
+                    font-family: 'Catamaran', sans-serif;
+                    font-size: 1rem;
+                    color: #666666;
+                }
+            }
+        }
+
+    }
+
+    .dynamic {
+        .container-wide {
+            max-width: 1500px;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+
+            .dots-wrapper {
+                background-image: url(../images/dots.svg);
+                background-repeat: no-repeat;
+                background-position: 117.3% 157%;
+                padding-bottom: 3.2rem;
+                padding-right: 3.7rem;
+            }
+
+            .dots-wrapper-top {
+                background-image: url(../images/dots.svg);
+                background-repeat: no-repeat;
+                background-position: 64.3% -20px;
+                padding-bottom: 3.2rem;
+                padding-right: -1.3rem;
+                padding-top: 4rem;
+            }
+
+            .content-wrapper {
+                max-width: 373px;
+                margin-left: 3rem;
+                margin-top: 3rem;
+
+                h3 {
+                    font-size: 36px;
+                }
+
+                hr {
+                    margin-top: 0.1rem;
+                    margin-bottom: 1rem;
+                    border: 0;
+                    border-top: 1px solid #E6007E;
+                    width: 74px;
+                    margin-left: 0;
+                }
+
+                p {
+                    font-family: 'Catamaran', sans-serif;
+                    font-size: 14px;
+                    color: #666666;
+                    line-height: 2;
+                }
+            }
+
+            .i-second {
+                position: absolute;
+                z-index: 50;
+                top: -100px;
+                left: 60px;
+            }
+
+            .i-four {
+                position: absolute;
+                z-index: 50;
+                left: -110px;
+            }
+
+            .c-first {
+                margin-left: 3rem;
+                margin-top: 3rem;
+            }
+
+            .c-second {
+                margin-left: 17rem;
+                margin-top: 5rem;
+            }
+
+            .c-third {
+                margin-left: -3rem;
+                margin-top: 19rem;
+            }
+
+            .c-four {
+                margin-left: 6rem;
+                margin-top: 3rem;
+            }
+
+            .r3 {
+                margin-top: 9rem;
+            }
+
+            .r4 {
+                margin-top: 9rem;
+
+                .dots-wrapper {
+                    background-image: url(../images/dots.svg);
+                    background-repeat: no-repeat;
+                    background-position: 70.3% 130px;
+                    padding-bottom: 38rem;
+                    padding-right: 2rem;
+                    padding-top: 4rem;
+                    margin-right: -3rem;
+                }
+            }
+
+        }
+
+    }
+
+    .vec-o-nas {
+        margin-top: 2rem;
+
+        .content-wrap {
+            text-align: center;
+
+            h2 {
+                font-size: 48px;
+            }
+
+            hr {
+                margin-top: 0.1rem;
+                margin-bottom: 1rem;
+                border: 0;
+                border-top: 1px solid #E6007E;
+                width: 74px;
+            }
+
+            p {
+                font-family: 'Catamaran', sans-serif;
+                font-size: 1rem;
+                color: #666666;
+            }
+        }
+
+        .product {
+            .img-wrap {
+                margin-bottom: 2rem;
+            }
+
+            .content {
+                h4 {
+                    text-align: center;
+                }
+
+                p {
+                    font-family: 'Catamaran', sans-serif;
+                    font-size: 1rem;
+                    color: #666666;
+                    text-align: center;
+                    margin-bottom: 0;
+                }
+
+                hr {
+                    margin-top: 0rem;
+                    margin-bottom: 0.5rem;
+                    border: 0;
+                    border-top: 1px solid #E6007E;
+                    width: 74px;
+                }
+
+                .price {
+                    text-align: center;
+                    font-family: 'Catamaran', sans-serif;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                }
+
+                .btn-wrap {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 0.7rem;
+                }
+            }
+        }
+    }
 }
