@@ -1,4 +1,4 @@
-# 🛒 Pink shop
+# 💊 Boilerplate on steroids 💊
 
 ## Install
 Just install yarn via command bellow to get all of included dependencies.
